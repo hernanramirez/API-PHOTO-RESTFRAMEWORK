@@ -10,9 +10,11 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ('id', 'username', 'first_name', 'last_name', 'email', 'password')
 
+
 class PhotoSerializer(serializers.ModelSerializer):
-    user = serializers.Field()
     image = HyperlinkedImageField()
+    #user = serializers.Field()
 
     class Meta:
         model = Photo
+        fields = ('title', 'user','image','upload_timestamp')

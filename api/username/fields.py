@@ -23,6 +23,7 @@ class PasswordField(CharField):
         return HIDDEN_PASSWORD_STRING
 
 class HyperlinkedImageField(ImageField):
+
     def to_native(self, value):
         request = self.context.get('request', None)
         if request and value.name:
