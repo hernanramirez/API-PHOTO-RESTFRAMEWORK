@@ -82,6 +82,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 STATIC_URL = '/static/'
 
+########## MEDIA CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
+# Por favor cambia a donde tienes el PATH de tu aplicacion
+MEDIA_ROOT = '/home/hernanr/myCode/python/SysDigital/API-PHOTO-RESTFRAMEWORK/api/images/'
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
+MEDIA_URL = '/api-auth/event/images/'
+########## END MEDIA CONFIGURATION
+
 
 REST_FRAMEWORK = {
     # Use hyperlinked styles by default.
