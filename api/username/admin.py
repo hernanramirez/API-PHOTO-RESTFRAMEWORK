@@ -1,6 +1,6 @@
 from django.contrib import admin
-from username.models import Photo
-from username.models import Like
+from event.models import Profile
+from event.models import Like
 
-admin.site.register(Photo)
+admin.site.register(Profile)
 admin.site.register(Like)

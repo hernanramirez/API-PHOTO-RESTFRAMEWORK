@@ -1,5 +1,5 @@
 from django import forms
-from rest_framework.serializers import CharField, ImageField
+from rest_framework.serializers import CharField
 
 HIDDEN_PASSWORD_STRING='<hidden>'
 
@@ -21,12 +21,3 @@ class PasswordField(CharField):
     def to_native(self, value):
         """Hide hashed-password in API display"""
         return HIDDEN_PASSWORD_STRING
-
-class HyperlinkedImageField(ImageField):
-
-    def to_native(self, value):
-        request = self.context.get('request', None)
-        if request and value.name:
-            return request.build_absolute_uri(value.url)
-        else:
-            return super(HyperlinkedImageField, self).to_native(value)

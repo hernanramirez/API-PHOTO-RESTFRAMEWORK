@@ -22,11 +22,14 @@ class Migration(migrations.Migration):
             bases=(models.Model,),
         ),
         migrations.CreateModel(
-            name='Photo',
+            name='Profile',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('title', models.CharField(max_length=255)),
                 ('image', models.ImageField(upload_to=b'images')),
+                ('address', models.CharField(max_length=255, blank=True)),
+                ('latitude', models.FloatField(default=0, verbose_name=b'Latitude')),
+                ('longitude', models.FloatField(default=0, verbose_name=b'Latitude')),
                 ('upload_timestamp', models.DateTimeField(auto_now_add=True)),
                 ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
@@ -38,7 +41,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='like',
             name='photo',
-            field=models.ManyToManyField(to='username.Photo'),
+            field=models.ManyToManyField(to='event.Profile'),
             preserve_default=True,
         ),
         migrations.AddField(

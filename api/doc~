@@ -1,0 +1,17 @@
+======= PHOTO ========
+curl -X POST -H "Content-Type:multipart/form-data" -u 11979902959:123 -F "image=@/home/wcarvalho/Desktop/index.jpeg;type=image/jpeg" -F "user=1" -F "title=vai cagar" -F "address=rua 10 - pery" -F "latitude=10.25667" -F "longitude=-22.12122" http://localhost:8000/event/
+
+curl -X GET -H "Content-Type: application/json" -u 11979902959:123 http://localhost:8000/event/
+
+
+
+
+======= USERNAME ========
+curl -X POST -H "Content-Type: application/json" http://localhost:8000/users/ -d '{"username": "11979202240", "first_name": "Jose", "email":"jose.pereira@hotmail.com", "password":"123"}' 
+
+curl -X GET -H "Content-Type: application/json"  http://localhost:8000/users/?name=jose.pereira@hotmail.com
+
+
+
+
+
